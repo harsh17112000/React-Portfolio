@@ -1,0 +1,23 @@
+.app{
+    height: 100vh;
+
+    .sections{
+        width: 100%;
+        height: calc(100vh - 70px); // this line means 100vh mathi je headeni height aapi hti 70px e baad kari 6
+        background-color: lightsalmon;
+        position: relative;
+        top: 70px;
+        scroll-behavior: smooth;
+        scroll-snap-type: y mandatory;
+        scrollbar-width: none; // for firefox
+        &::-webkit-scrollbar{  // this is for all browsers
+            display: none;
+        }
+
+        > *{   // aanathi hve individually drek page mate heigth width set nai karvi pade
+            width: 100vw;
+            height: calc(100vh - 70px); // which means section ni andr jetla pn child 6 teni widht heigt set kri
+            scroll-snap-align: start; // scroll karine 6odi daisu to upr k niceh jate jtu rese
+        }
+    }
+}
